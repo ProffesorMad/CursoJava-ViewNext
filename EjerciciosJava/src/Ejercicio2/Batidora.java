@@ -2,16 +2,20 @@ package Ejercicio2;
 
 public class Batidora extends Electrodomestico {
 	
-	private int potencia;
+	private int voltaje;
 	
-	public Batidora(String marca, double precio, int potencia) {
+	public Batidora(String marca, double precio, int voltaje) {
 		super(marca, precio);
-		this.potencia = potencia;
+		this.voltaje = voltaje;
 	}
 
-	public int getPotencia() {
-		return potencia;
+	public int getVoltaje() {
+		return voltaje;
 	}
 
-
+	// Método específico de la batidora
+    public void batir() {
+        System.out.println("Batiendo...");
+    }
 }
+

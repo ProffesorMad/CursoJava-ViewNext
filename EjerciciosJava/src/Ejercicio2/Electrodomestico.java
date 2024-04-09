@@ -18,6 +18,7 @@ public class Electrodomestico {
 		return precio;
 	}
 	
+	// Métodos específicos del Electrodomestico
 	public void encender() {
         System.out.println("Encendiendo...");
     }

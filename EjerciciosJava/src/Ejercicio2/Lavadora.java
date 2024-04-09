@@ -13,6 +13,7 @@ public class Lavadora extends Electrodomestico{
 		return capacidad;
 	}
 	
+	// Método específico de la lavadora
 	public void iniciarLavado() {
 		System.out.println("Iniciando lavado...");
 	}
