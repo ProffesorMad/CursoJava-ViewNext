@@ -1,0 +1,19 @@
+package Ejercicio2;
+
+public class Lavadora extends Electrodomestico{
+	
+	private int capacidad;
+
+	public Lavadora(String marca, double precio, int capacidad) {
+        super(marca, precio);
+        this.capacidad = capacidad;
+    }
+	
+	public int getCapacidad() {
+		return capacidad;
+	}
+	
+	public void iniciarLavado() {
+		System.out.println("Iniciando lavado...");
+	}
+}

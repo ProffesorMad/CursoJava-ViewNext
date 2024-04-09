@@ -1,42 +1,33 @@
 package Ejercicio3;
 
-public class Producto {
+public abstract class Producto {
+    private int codigoProducto;
+    private String modelo;
+    private double precio;
+    private int cantidadDisponible;
 
-	private int codigo;
-	private String modelo;
-	private double precio;
-	private int cantidad;
-	
-	public Producto(int codigo, String modelo, double precio, int cantidad) {
-		this.codigo = codigo;
-		this.modelo = modelo;
-		this.precio = precio;
-		this.cantidad = cantidad;
-	}
+    public Producto(int codigoProducto, String modelo, double precio, int cantidadDisponible) {
+        this.codigoProducto = codigoProducto;
+        this.modelo = modelo;
+        this.precio = precio;
+        this.cantidadDisponible = cantidadDisponible;
+    }
 
-	public int getCodigo() {
-		return codigo;
-	}
+    public int getCodigoProducto() {
+        return codigoProducto;
+    }
 
-	public String getModelo() {
-		return modelo;
-	}
+    public String getModelo() {
+        return modelo;
+    }
 
-	public double getPrecio() {
-		return precio;
-	}
+    public double getPrecio() {
+        return precio;
+    }
 
-	public int getCantidad() {
-		return cantidad;
-	}
+    public int getCantidadDisponible() {
+        return cantidadDisponible;
+    }
 
-	@Override
-	public String toString() {
-		return "Producto [codigo=" + codigo + ", modelo=" + modelo + ", precio=" + precio + ", cantidad=" + cantidad
-				+ "]";
-	}
-	
-	
-	
-	
+    public abstract String toString();
 }

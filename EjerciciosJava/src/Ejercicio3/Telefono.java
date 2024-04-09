@@ -14,12 +14,10 @@ public class Telefono extends Producto {
 
     @Override
     public String toString() {
-        return "TelefonoMovil{" +
-                "codigoProducto='" + getCodigo() + '\'' +
-                ", modelo='" + getModelo() + '\'' +
-                ", precio=" + getPrecio() +
-                ", cantidadDisponible=" + getCantidad() +
-                ", operador='" + operador + '\'' +
-                '}';
+        return  "Codigo Producto = " + getCodigoProducto() +
+                "  Modelo = " + getModelo() +
+                "  Precio = " + getPrecio() +
+                "  Cantidad Disponible = " + getCantidadDisponible() +
+                "  Operador = " + operador  ;
     }
 }

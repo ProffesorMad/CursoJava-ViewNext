@@ -26,14 +26,12 @@ public class Ordenador extends Producto {
 
     @Override
     public String toString() {
-        return "Ordenador{" +
-                "codigoProducto='" + getCodigo() + '\'' +
-                ", modelo='" + getModelo() + '\'' +
-                ", precio=" + getPrecio() +
-                ", cantidadDisponible=" + getCantidad() +
-                ", procesador='" + procesador + '\'' +
-                ", memoriaRAM=" + memoriaRAM +
-                ", capacidadDiscoDuro=" + capacidadDiscoDuro +
-                '}';
+        return  "CodigoProducto = " + getCodigoProducto() +
+                "  Modelo = " + getModelo() + 
+                "  Precio = " + getPrecio() +
+                "  Cantidad Disponible= " + getCantidadDisponible() +
+                "  Procesador = " + procesador + 
+                "  Memoria RAM = " + memoriaRAM +
+                "  Capacidad Disco Duro = " + capacidadDiscoDuro ;
     }
 }

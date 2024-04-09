@@ -8,10 +8,10 @@ public class Main {
         Libro libro2 = new Libro("978-03-074-7472-8", "1984", "George Orwell", 328);
 
         // Mostrar detalles de los libros por pantalla
-        System.out.println("Detalles del primer libro:");
+        System.out.println("Primer libro:");
         System.out.println(libro1.toString());
 
-        System.out.println("\nDetalles del segundo libro:");
+        System.out.println("\nSegundo libro:");
         System.out.println(libro2.toString());
 
         // Determinar cuál de los dos tiene más páginas
