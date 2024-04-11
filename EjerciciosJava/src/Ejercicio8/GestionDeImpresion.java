@@ -2,7 +2,7 @@ package Ejercicio8;
 
 public class GestionDeImpresion {
 	
-	public static void main(String[] args) {
+	public static void instanciarelmetodomain(){
         
 		// Instanciar un objeto de cada clase
 		
@@ -18,4 +18,11 @@ public class GestionDeImpresion {
         factura.informeLargo();
         factura.informeCorto();
     }
+	
+	//Instancio el metodo para que llame al main
+	
+	public static void main(String[] args) {
+		instanciarelmetodomain();
+	}
+		
 }
