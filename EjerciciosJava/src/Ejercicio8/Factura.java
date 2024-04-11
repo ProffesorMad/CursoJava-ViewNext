@@ -3,16 +3,16 @@ package Ejercicio8;
 public class Factura implements Imprimible {
 
 	private int nFactura;
-	private int CodigoCliente;
+	private int codigoCliente;
 	
 	public Factura(int nFactura, int codigoCliente) {
 		this.nFactura = nFactura;
-		this.CodigoCliente = codigoCliente;
+		this.codigoCliente = codigoCliente;
 	}
 
 	@Override
     public void informeLargo() {
-        System.out.println("Informe largo de Factura: Numero de Facturas = " + nFactura + ", Codigo Cliente = " + CodigoCliente);
+        System.out.println("Informe largo de Factura: Numero de Facturas = " + nFactura + ", Codigo Cliente = " + codigoCliente);
     }
 
     @Override
