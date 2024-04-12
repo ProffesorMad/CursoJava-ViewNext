@@ -1,19 +1,21 @@
 package Ejercicio7;
 
-public class Tambor extends Instrumento {
-	
-    private String tamaño;
-    
-    public Tambor(String nombre, String tipo, String tamaño) {
-        super(nombre, tipo);
-        this.tamaño = tamaño;
-    }
-    
-    public void aporrear() {
-        System.out.println("Aporreando tambor " + nombre);
-    }
+public class Tambor extends Instrumento{
 
-	public String getTamaño() {
-		return tamaño;
+	private int tamanio;
+	
+	public Tambor(String nombre, String tipo, int tamanio) {
+		super(nombre, tipo);
+		this.tamanio = tamanio;
 	}
+
+	@Override
+	public String toString() {
+		return "Tambor --> Tamaño = " + tamanio + "  Nombre = " + nombre + "  Tipo = " + tipo ;
+	}
+
+	public void aporrear() {
+		System.out.println("Aporreando " + nombre);
+	}
+	
 }

@@ -1,12 +1,22 @@
 package Ejercicio7;
 
 public class Guitarra extends Instrumento{
+
+	protected int numeroCuerdas;
 	
-	int numCuerdas;
-	
-	public Guitarra(String nombre, String tipo, int numCuerdas) {
+	public Guitarra(String nombre, String tipo) {
 		super(nombre, tipo);
-		this.numCuerdas = numCuerdas;
+		// TODO Auto-generated constructor stub
 	}
 
+	public Guitarra(String nombre, String tipo, int numeroCuerdas) {
+		super(nombre, tipo);
+		this.numeroCuerdas = numeroCuerdas;
+	}
+
+	@Override
+	public String toString() {
+		return "Guitarra --> Numero de Cuerdas = " + numeroCuerdas + "  Nombre = " + nombre + "  Tipo=" + tipo ;
+	}
+	
 }
