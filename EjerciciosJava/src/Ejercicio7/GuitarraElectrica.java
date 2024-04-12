@@ -4,11 +4,6 @@ public class GuitarraElectrica extends Guitarra{
 
 	protected int potencia;
 	
-	public GuitarraElectrica(String nombre, String tipo, int numeroCuerdas) {
-		super(nombre, tipo, numeroCuerdas);
-		// TODO Auto-generated constructor stub
-	}
-	
 	public GuitarraElectrica(String nombre, String tipo, int numeroCuerdas, int potencia) {
 		super(nombre, tipo, numeroCuerdas);
 		this.potencia = potencia;
