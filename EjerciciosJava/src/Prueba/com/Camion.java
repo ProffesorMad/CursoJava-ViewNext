@@ -23,5 +23,12 @@ public class Camion extends Vehiculo {
     public void agregarVelocidadAlTacometro(int velocidad) {
         tacometro.add(velocidad);
     }
+
+	@Override
+	public String toString() {
+		return "Camion con Matricula \"" + getMatricula() + "\" tiene unas velocidades registradas de " + tacometro;
+	}
+    
+    
 }
 
