@@ -2,21 +2,18 @@ package Prueba.com;
 
 abstract class Vehiculo {
 	
-    protected final String matricula;
-    protected final int numeroRuedas;
+    // Propiedades inmutables
+	
+    private final String matricula;
+    
 
-    public Vehiculo(String matricula, int numeroRuedas) {
+    public Vehiculo(String matricula) {
         this.matricula = matricula;
-        this.numeroRuedas = numeroRuedas;
     }
 
-    // Getter
+    // Getters para la matrícula
     
     public String getMatricula() {
         return matricula;
-    }
-
-    public int getNumeroRuedas() {
-        return numeroRuedas;
     }
 }

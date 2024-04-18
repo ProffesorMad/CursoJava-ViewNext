@@ -3,7 +3,7 @@ package Prueba.com;
 public interface Conducible {
 	
     void conducir();
-    void avanzar();
-    void retroceder();
+    void avanzar(int distancia);
+    void retroceder(int distancia);
     void parar();
 }

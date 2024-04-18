@@ -1,22 +1,20 @@
 package Prueba.com;
 
+import java.util.List;
+
 public class Main {
 	
     public static void main(String[] args) {
     	
-        Coche miCoche = new Coche("1234ABC", "Rojo");
-        System.out.println("Matrícula: " + miCoche.getMatricula());
-        System.out.println("Color: " + miCoche.getColor());
-        System.out.println("Número de ruedas: " + miCoche.getNumeroRuedas());
-
-        System.out.println("\n");
+        Coche miCoche = new Coche("1233ABC", "Rojo");
         miCoche.conducir();
-        miCoche.avanzar();
-        miCoche.retroceder();
+        miCoche.avanzar(10);
         miCoche.parar();
 
-        System.out.println("\n");
-        miCoche.pintar("Azul");
-        System.out.println("Nuevo color: " + miCoche.getColor());
+        Camion miCamion = new Camion("4561DEF");
+        miCamion.agregarVelocidadAlTacometro(50);
+        miCamion.agregarVelocidadAlTacometro(60);
+        List<Integer> velocidades = miCamion.getTacometro();
+        System.out.println("\nVelocidades registradas en el tacómetro del camión: " + velocidades);
     }
 }
