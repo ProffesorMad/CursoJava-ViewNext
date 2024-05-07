@@ -139,4 +139,54 @@
     <servlet-name>Usuario</servlet-name>
     <url-pattern>/Usuario</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GestionProductosServlet</display-name>
+    <servlet-name>GestionProductosServlet</servlet-name>
+    <servlet-class>com.productos.GestionProductosServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GestionProductosServlet</servlet-name>
+    <url-pattern>/GestionProductosServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Agregar</display-name>
+    <servlet-name>Agregar</servlet-name>
+    <servlet-class>com.productos.Agregar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Agregar</servlet-name>
+    <url-pattern>/Agregar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModificarPrecio</display-name>
+    <servlet-name>ModificarPrecio</servlet-name>
+    <servlet-class>com.productos.ModificarPrecio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModificarPrecio</servlet-name>
+    <url-pattern>/ModificarPrecio</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Eliminar</display-name>
+    <servlet-name>Eliminar</servlet-name>
+    <servlet-class>com.productos.Eliminar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Eliminar</servlet-name>
+    <url-pattern>/Eliminar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BuscarPorSeccion</display-name>
+    <servlet-name>BuscarPorSeccion</servlet-name>
+    <servlet-class>com.productos.BuscarPorSeccion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarPorSeccion</servlet-name>
+    <url-pattern>/BuscarPorSeccion</url-pattern>
+  </servlet-mapping>
 </web-app>
