@@ -99,4 +99,44 @@
     <servlet-name>ListaCursoServlet</servlet-name>
     <url-pattern>/ListaCursoServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.login.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Cursos</display-name>
+    <servlet-name>Cursos</servlet-name>
+    <servlet-class>com.login.Cursos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cursos</servlet-name>
+    <url-pattern>/Cursos</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Registrar</display-name>
+    <servlet-name>Registrar</servlet-name>
+    <servlet-class>com.login.Registrar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Registrar</servlet-name>
+    <url-pattern>/Registrar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Usuario</display-name>
+    <servlet-name>Usuario</servlet-name>
+    <servlet-class>com.login.Usuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Usuario</servlet-name>
+    <url-pattern>/Usuario</url-pattern>
+  </servlet-mapping>
 </web-app>
