@@ -1,0 +1,17 @@
+Java Persistence API es una especificacion de Java que proporciona un framework para mapear objetos Java a tablas en bases de datos relacionales la cual te permite interactuar con bases de datos de una manera orientada a objetos, 
+lo que simplifica el proceso de almacenar, recuperar y manipular datos.
+Las anotaciones mas comunes de JPA son:
+
+-@Entity: Se coloca sobre una clase Java para indicar que la clase representa una entidad que se puede almacenar en una base de datos.
+
+-@Id: Se coloca sobre el atributo de una clase que actua como la clave primaria de la entidad e indica que este atributo identifica de manera unica cada instancia.
+
+-@GeneratedValue: Se utiliza junto con @Id para especificar como se generara automaticamente el valor de la clave primaria.
+
+-@Column: Se utiliza para especificar el mapeo entre un atributo de una entidad y una columna en la tabla de la base de datos.
+
+-@ManyToOne, @OneToMany, @OneToOne, @ManyToMany: Estas anotaciones se utilizan para especificar las relaciones entre entidades.
+
+JDBC (Java Database Connectivity): Es una API de Java que proporciona metodos y clases para que las aplicaciones Java puedan interactuar con bases de datos relacionales la cual permite ejecutar consultas SQL, actualizar datos, etc...
+
+Hibernate es un framework de mapeo objeto-relacional, esta proporciona una forma de mapear objetos Java a tablas en una base de datos relacional y viceversa, facilitando asi la interaccion entre una aplicacion Java y una base de datos.
