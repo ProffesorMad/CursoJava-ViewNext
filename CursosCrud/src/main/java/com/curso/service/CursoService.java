@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.curso.model.Curso;
-import com.cursos.repository.CursoRepository;
+import com.curso.repository.CursoRepository;
+
 
 @Service
 public class CursoService {
@@ -24,7 +25,7 @@ public class CursoService {
     }
 
     public Curso saveCurso(Curso curso) {
-        return cursoRepository.save(curso);
+        return cursoRepository.save(curso);  
     }
 
     public void deleteCurso(String codCurso) {
