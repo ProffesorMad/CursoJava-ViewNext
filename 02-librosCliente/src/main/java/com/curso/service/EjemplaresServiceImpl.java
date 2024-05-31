@@ -20,6 +20,6 @@ public class EjemplaresServiceImpl implements EjemplaresService{
 	@Override
 	public List<Ejemplar> nuevoEjemplar(Ejemplar ejemplar){
 		template.postForLocation(url + "libros", ejemplar);
-		return Arrays.asList(template.getForObject(url,Ejemplar[].class));
+		return Arrays.asList(template.getForObject(url + "libros",Ejemplar[].class));
 	}
 }
