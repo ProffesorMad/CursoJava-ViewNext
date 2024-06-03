@@ -37,7 +37,7 @@ public class ProductosController {
         return service.buscarProductosPorStock(stock);
     }
     
-    // http://localhost:8000/productos/nombre?nombre=producto
+    // http://localhost:8000/productos/Chaqueta%de%cuero
     @GetMapping(value = "productos/nombre", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Producto> buscarProductosPorNombre(@RequestParam String nombre) {
         return service.buscarProductosPorNombre(nombre);
