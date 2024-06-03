@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Lista2</title>
+</head>
+<body>
+<table border="1">
+<tr th:each="persona:${lista}">
+	<td th:text="${persona.nombre}"></td>
+	<td th:text="${persona.apellido}"></td>
+	<td th:text="${persona.edad}"></td>
+</tr>
+</table>
+<p><img th:src="@{/imagenes/jagger.jpg}" width="150"/>
+<br>Enlaces<br>
+A un recurso externo: <a th:href="@{https://www.flashscore.es/}">Texto enlace 1</a><br>
+A un recurso del sitio: <a th:href="@{lista}">Enlace fichero a lista.html</a>
+</body>
+</html>
