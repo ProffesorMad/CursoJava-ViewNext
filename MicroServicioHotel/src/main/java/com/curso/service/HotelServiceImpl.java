@@ -13,41 +13,46 @@ import com.curso.model.Hotel;
 public class HotelServiceImpl implements HotelService {
 
     @Autowired
-    HotelDao dao;
+    HotelDao hoteldao;
 
     @Override
     public List<Hotel> listar() {
-        return dao.findAll();
+        return hoteldao.findAll();
     }
 
     @Override
     public Optional<Hotel> buscar(Integer idHotel) {
-        return dao.findById(idHotel);
+        return hoteldao.findById(idHotel);
     }
 
     @Override
     public void crear(Hotel hotel) {
-        dao.save(hotel);
+    	hoteldao.save(hotel);
     }
 
     @Override
     public void actualizar(Hotel hotel) {
-        dao.save(hotel);
+    	hoteldao.save(hotel);
     }
 
     @Override
     public List<Hotel> eliminar(Integer idHotel) {
-        dao.deleteById(idHotel);
+    	hoteldao.deleteById(idHotel);
         return listar();
     }
 
     @Override
     public Optional<Hotel> buscarPorNombre(String nombre) {
-        return dao.findByNombre(nombre);
+        return hoteldao.findByNombre(nombre);
     }
 
     @Override
     public List<Hotel> listarDisponibles() {
-        return dao.findByDisponibleTrue();
+        return hoteldao.findByDisponibleTrue();
+    }
+    
+    @Override
+    public List<Hotel> buscarPorCategoria(String categoria) {
+        return hoteldao.findByCategoria(categoria);
     }
 }

@@ -11,4 +11,5 @@ public interface HotelDao extends JpaRepository<Hotel, Integer> {
 
     List<Hotel> findByDisponibleTrue();
     Optional<Hotel> findByNombre(String nombre);
+    List<Hotel> findByCategoria(String categoria);
 }

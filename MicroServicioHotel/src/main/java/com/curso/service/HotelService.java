@@ -14,4 +14,5 @@ public interface HotelService {
     List<Hotel> eliminar(Integer idHotel);
     Optional<Hotel> buscarPorNombre(String nombre);
     List<Hotel> listarDisponibles();
+    List<Hotel> buscarPorCategoria(String categoria);
 }
