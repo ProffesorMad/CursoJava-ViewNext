@@ -1,34 +1,59 @@
 package com.curso.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import com.curso.model.Hotel;
-import com.curso.repository.HotelRepository;
-
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.curso.model.Hotel;
+import com.curso.service.HotelService;
+
 @RestController
-@RequestMapping("/hoteles")
 public class HotelController {
 
     @Autowired
-    private HotelRepository hotelRepository;
-
-    @GetMapping("/disponibles")
-    public List<Hotel> getHotelesDisponibles() {
-        return hotelRepository.findByDisponibleTrue();
+    HotelService service;
+    
+    @GetMapping(value = "hoteles", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Hotel> listar() {
+        return service.listar();
     }
 
-    @GetMapping("/{nombre}")
-    public ResponseEntity<Hotel> getHotelByName(@PathVariable String nombre) {
-        Optional<Hotel> hotel = hotelRepository.findByNombre(nombre);
-        if (hotel.isPresent()) {
-            return ResponseEntity.ok(hotel.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    @GetMapping(value = "hoteles/{idHotel}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<Hotel> buscarPorId(@PathVariable("idHotel") Integer idHotel) {
+        return service.buscar(idHotel);
+    }
+
+    @PostMapping(value = "hoteles", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void crear(@RequestBody Hotel hotel) {
+        service.crear(hotel);
+    }
+
+    @PutMapping(value = "hoteles", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void actualizar(@RequestBody Hotel hotel) {
+        service.actualizar(hotel);
+    }
+
+    @DeleteMapping(value = "hoteles/{idHotel}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Hotel> eliminar(@PathVariable("idHotel") Integer idHotel) {
+        return service.eliminar(idHotel);
+    }
+
+    @GetMapping(value = "hoteles/disponibles", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Hotel> listarDisponibles() {
+        return service.listarDisponibles();
+    }
+
+    @GetMapping(value = "hoteles/nombre/{nombre}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<Hotel> buscarPorNombre(@PathVariable("nombre") String nombre) {
+        return service.buscarPorNombre(nombre);
     }
 }
