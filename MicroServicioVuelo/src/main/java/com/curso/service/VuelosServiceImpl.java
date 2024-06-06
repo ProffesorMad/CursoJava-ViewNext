@@ -1,6 +1,7 @@
 package com.curso.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,43 +13,43 @@ import com.curso.model.Vuelo;
 public class VuelosServiceImpl implements VuelosService {
 
 	@Autowired
-	VuelosDao dao;
-	
+	VuelosDao vuelosdao;
 	
 	@Override
-	public List<Vuelo> vuelos() {
-		return dao.findAll();
+	public List<Vuelo> listar() {	
+	    return vuelosdao.findAll();
 	}
 
 	@Override
-	public List<Vuelo> alta(Vuelo vuelo) {
-		dao.save(vuelo);
-		return dao.findAll();
+	public Optional<Vuelo> buscar(int idVuelo) {
+	    return vuelosdao.findById(idVuelo);
+	}
+
+	@Override
+	public void crear(Vuelo vuelo) {
+	    vuelosdao.save(vuelo);
+	}
+
+	@Override
+	public void actualizar(Vuelo vuelo) {
+	    vuelosdao.save(vuelo);
 	}
 
 	@Override
 	public List<Vuelo> eliminar(int idVuelo) {
-		dao.deleteById(idVuelo);
-		return dao.findAll();
+	    vuelosdao.deleteById(idVuelo);
+	    return listar();
 	}
 
 	@Override
-	public List<Vuelo> actualizarVuelo(int idVuelo, int plazas) {
-		List<Vuelo> vuelosDisp = vuelosDisponibles(plazas);
-		
-		for(Vuelo v : vuelosDisp) {
-			if(v.getIdVuelo() == idVuelo) {
-				v.setPlazasDisponibles(v.getPlazasDisponibles() - plazas);
-				dao.save(v);
-			}
-		}
-		
-		return dao.findAll();
+	public List<Vuelo> buscarDisponibles(int plazas) {
+	    return vuelosdao.findByPlazasDisponiblesGreaterThanEqual(plazas);
 	}
 
 	@Override
-	public List<Vuelo> vuelosDisponibles(int numPlazas) {
-		return dao.vuelosDisponibles(numPlazas);
+	public void actualizarPlazas(int reservadas, int idVuelo) {	
+	    vuelosdao.actualizaPlazasDisponibles(reservadas, idVuelo);
 	}
+
 
 }

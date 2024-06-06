@@ -63,4 +63,11 @@ public class HotelController {
     public Optional<Hotel> buscarPorNombre(@PathVariable("nombre") String nombre) {
         return service.buscarPorNombre(nombre);
     }
+    
+    // http://localhost:8080/hoteles/categoria/3%20estrellas
+    @GetMapping(value = "hoteles/categoria/{categoria}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Hotel> buscarPorCategoria(@PathVariable("categoria") String categoria) {
+        return service.buscarPorCategoria(categoria);
+    }
+    
 }

@@ -1,5 +1,6 @@
 package com.curso.model;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -10,79 +11,80 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="vuelos")
+@Table(name="Vuelos")
 public class Vuelo {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_vuelo")
-	private int idVuelo;
-	private String compania;
-	@Column(name="fecha_vuelo")
-	private String fechaVuelo;
-	private double precio;
-	@Column(name="plazas_disponibles")
-	private int plazasDisponibles;
-	
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer idVuelo;
+	@Column(name = "empresa")
+	private String empresa;
+	@Column(name = "fecha_vuelo")
+	private LocalDate fechaVuelo;
+	@Column(name = "precio")
+	private Double precio;
+	@Column(name = "plazas_disponibles")
+	private Integer plazasDisponibles;
+
 	public Vuelo() {
-		super();
 	}
 
-	public Vuelo(String compania, String fechaVuelo, double precio, int plazasDisponibles) {
-		super();
-		this.compania = compania;
-		this.fechaVuelo = fechaVuelo;
-		this.precio = precio;
-		this.plazasDisponibles = plazasDisponibles;
-	}
-
-	public Vuelo(int idVuelo, String compania, String fechaVuelo, double precio, int plazasDisponibles) {
-		super();
+	public Vuelo(Integer idVuelo) {
 		this.idVuelo = idVuelo;
-		this.compania = compania;
+	}
+
+	public Vuelo(String empresa, LocalDate fechaVuelo, Double precio, Integer plazasDisponibles) {
+		this.empresa = empresa;
 		this.fechaVuelo = fechaVuelo;
 		this.precio = precio;
 		this.plazasDisponibles = plazasDisponibles;
 	}
 
-	public int getIdVuelo() {
+	public Vuelo(Integer idVuelo, String empresa, LocalDate fechaVuelo, Double precio, Integer plazasDisponibles) {
+		this.idVuelo = idVuelo;
+		this.empresa = empresa;
+		this.fechaVuelo = fechaVuelo;
+		this.precio = precio;
+		this.plazasDisponibles = plazasDisponibles;
+	}
+
+	public Integer getIdVuelo() {
 		return idVuelo;
 	}
 
-	public void setIdVuelo(int idVuelo) {
+	public void setIdVuelo(Integer idVuelo) {
 		this.idVuelo = idVuelo;
 	}
 
-	public String getCompania() {
-		return compania;
+	public String getEmpresa() {
+		return empresa;
 	}
 
-	public void setCompania(String compania) {
-		this.compania = compania;
+	public void setEmpresa(String empresa) {
+		this.empresa = empresa;
 	}
 
-	public String getFechaVuelo() {
+	public LocalDate getFechaVuelo() {
 		return fechaVuelo;
 	}
 
-	public void setFechaVuelo(String fechaVuelo) {
+	public void setFechaVuelo(LocalDate fechaVuelo) {
 		this.fechaVuelo = fechaVuelo;
 	}
 
-	public double getPrecio() {
+	public Double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(double precio) {
+	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 
-	public int getPlazasDisponibles() {
+	public Integer getPlazasDisponibles() {
 		return plazasDisponibles;
 	}
 
-	public void setPlazasDisponibles(int plazasDisponibles) {
+	public void setPlazasDisponibles(Integer plazasDisponibles) {
 		this.plazasDisponibles = plazasDisponibles;
 	}
 
@@ -90,7 +92,7 @@ public class Vuelo {
 	public int hashCode() {
 		return Objects.hash(idVuelo);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -100,9 +102,7 @@ public class Vuelo {
 		if (getClass() != obj.getClass())
 			return false;
 		Vuelo other = (Vuelo) obj;
-		return idVuelo == other.idVuelo;
+		return Objects.equals(idVuelo, other.idVuelo);
 	}
-	
-	
-	
+
 }
