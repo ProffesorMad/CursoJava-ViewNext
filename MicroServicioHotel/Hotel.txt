@@ -1,0 +1,41 @@
+---- HotelController:
+
+Aqui los metodos de listar() el cual retorna una lista de los hoteles
+BuscarId que te permite buscarlos por su ID
+Crear te premite crear un nuevo hotel 
+Actualizar te permite cambiar cualquiera de los datos del hotel
+Eliminar te permite eliminar los datos del hotel que selecciones segun su Id
+ListarDisponibles te permite buscar los hoteles los cuales estan disponibles
+BuscarPorCategoria te permite buscar por el numero de estrellas del hotel
+
+----En el HotelDao defino los métodos personalizados para buscar hoteles por disponibilidad, 
+	nombre y categoría:
+
+findByDisponibleTrue(): Retorna una lista de hoteles disponibles.
+findByNombre(String nombre): Busca un hotel por su nombre.
+findByCategoria(String categoria): Busca hoteles por su categoría.
+
+----- MicroServicioHotelApplication
+
+Utiliza varias anotaciones para configurar el escaneo de entidades, repositorios y componentes:
+
+@EntityScan: Escanea las entidades JPA en el paquete com.curso.model.
+@EnableJpaRepositories: Habilita los repositorios JPA en el paquete com.curso.dao.
+@SpringBootApplication: Configura la aplicación Spring Boot y escanea los paquetes 
+	com.curso.controller y com.curso.service.
+
+
+------ Hotel
+
+Define los campos idHotel, nombre, categoria, precio, y disponible, junto con sus getters y setters.
+Utiliza varias anotaciones JPA para mapear los campos a columnas de la tabla hotel
+
+----- HotelService
+
+Esta interfaz define los métodos del servicio para gestionar hoteles. 
+Los métodos incluyen listar todos los hoteles, buscar por ID, crear, actualizar, eliminar, 
+buscar por nombre, listar disponibles y buscar por categoría.
+
+------ HotelServiceImpl
+Esta clase implementa HotelService y proporciona la lógica del negocio para cada método definido 
+en la interfaz. Utiliza HotelDao para interactuar con la base de datos.
