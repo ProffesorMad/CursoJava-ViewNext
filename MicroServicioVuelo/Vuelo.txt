@@ -1,0 +1,37 @@
+Controlador (VuelosController)
+El controlador maneja las solicitudes HTTP:
+
+Listar Vuelos: Devuelve una lista de todos los vuelos
+Buscar Vuelo por ID: Devuelve un vuelo específico dado su ID
+Crear Vuelo: Crea un nuevo vuelo
+Actualizar Vuelo: Actualiza un vuelo existente
+Eliminar Vuelo: Elimina un vuelo por su ID y devuelve la lista actualizada de vuelos
+Buscar Vuelos Disponibles: Devuelve vuelos con un número mínimo de plazas disponibles
+Actualizar Plazas de un Vuelo: Actualiza las plazas disponibles de un vuelo.
+
+
+Repositorio (VuelosDao)
+El repositorio proporciona acceso a la base de datos:
+
+Buscar Vuelos por Plazas Disponibles: Devuelve vuelos con plazas disponibles mayores o iguales 
+				      a un valor dado
+
+Actualizar Plazas Disponibles: Actualiza el número de plazas disponibles de un vuelo
+
+
+Aplicación (MicroServicioVueloApplication)
+La clase principal configura y lanza la aplicación
+
+
+Entidad (Vuelo)
+La clase Vuelo representa la entidad de vuelo:
+
+
+Servicio (VuelosService y VuelosServiceImpl)
+La capa de servicio implementa la lógica del negocio:
+
+Interfaz VuelosService:
+Define los métodos del servicio como listar, buscar, crear, actualizar, eliminar vuelos, buscar disponibles y actualizar plazas.
+
+Implementación VuelosServiceImpl:
+Implementa los métodos definidos en la interfaz utilizando VuelosDao.

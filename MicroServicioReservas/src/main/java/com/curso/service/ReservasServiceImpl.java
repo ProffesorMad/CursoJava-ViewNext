@@ -38,14 +38,18 @@ public class ReservasServiceImpl implements ReservasService {
 	public void crearReserva(Reserva reserva) {
 		boolean vueloDisponible = false;
 		System.out.println(reserva);
+		// Obtiene una lista de vuelos disponibles para el número de personas especificado en la reserva
 		List<Vuelo> listaVuelos = Arrays.asList(
 				template.getForObject(URL_VUELO + "/disponibles/" + reserva.getNumeroPersonas(), Vuelo[].class));
+		// Itera sobre la lista de vuelos disponibles para verificar si el vuelo deseado está disponible
 		for (Vuelo vuelo : listaVuelos) {
 			if (vuelo.getIdVuelo() == reserva.getIdVuelo()) {
 				vueloDisponible = true;
+				// Actualiza la disponibilidad del vuelo restando el número de personas de la reserva
 				template.put(URL_VUELO + "/" + vuelo.getIdVuelo() + "/" + reserva.getNumeroPersonas(), null);
 			}
 		}
+		// Si el vuelo está disponible, guarda la reserva en la base de datos
 		if (vueloDisponible) {
 			reservasdao.save(reserva);
 		}
