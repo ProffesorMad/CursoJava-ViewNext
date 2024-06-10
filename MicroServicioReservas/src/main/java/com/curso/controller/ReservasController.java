@@ -57,5 +57,6 @@ public class ReservasController {
 	public List<Reserva> buscarPorNombreHotel(@PathVariable("nombreHotel") String nombreHotel) {
 		return service.buscarPorNombreDelHotel(nombreHotel);
 	}
-
+ 
+	
 }
