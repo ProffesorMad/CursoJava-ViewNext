@@ -1,0 +1,58 @@
+1. ReservasController
+Este controlador REST expone varias API para gestionar reservas:
+
+GET /reservas: Lista todas las reservas.
+GET /reservas/{idReserva}: Busca una reserva por su ID.
+POST /reservas: Crea una nueva reserva.
+PUT /reservas: Actualiza una reserva existente.
+DELETE /reservas/{idReserva}: Elimina una reserva por su ID.
+GET /reservas/hotel/{nombreHotel}: Busca reservas por el nombre del hotel.
+
+2. ReservasDao
+Este DAO (Data Access Object) extiende JpaRepository para proporcionar acceso a la base de datos 
+de reservas. También define un método adicional findByIdHotel para buscar reservas por el ID del 
+hotel.
+
+3. MicroServicioReservasApplication
+Esta es la clase principal de la aplicación Spring Boot:
+
+Configura la aplicación para escanear los paquetes necesarios.
+Define un RestTemplate como un bean para realizar llamadas REST.
+
+4. Hotel
+Clase de modelo para los datos de un hotel, con propiedades como idHotel, nombre, categoria, 
+precio y disponible.
+
+5. Reserva
+Clase de entidad JPA que representa una reserva. Incluye campos como idReserva, nombreCliente, 
+dni, numeroPersonas, idVuelo y idHotel. La clase también incluye métodos hashCode, 
+equals y toString.
+
+6. Vuelo
+Clase de modelo para los datos de un vuelo, con propiedades como idVuelo, empresa, 
+fechaVuelo, precio y plazasDisponibles.
+
+7. ReservasService
+Interfaz del servicio que define los métodos para gestionar reservas:
+
+listarReservas(): Lista todas las reservas.
+buscarReserva(int idReserva): Busca una reserva por su ID.
+crearReserva(Reserva reserva): Crea una nueva reserva.
+actualizarReserva(Reserva reserva): Actualiza una reserva.
+eliminarReserva(int idReserva): Elimina una reserva por su ID.
+buscarPorNombreDelHotel(String nombreHotel): Busca reservas por el nombre del hotel.
+
+8. ReservasServiceImpl
+Implementación del servicio de reservas que interactúa con el DAO y realiza llamadas REST a otros 
+servicios (como vuelos y hoteles):
+
+listarReservas(): Utiliza ReservasDao para obtener todas las reservas.
+buscarReserva(int idReserva): Utiliza ReservasDao para encontrar una reserva por su ID.
+crearReserva(Reserva reserva): Verifica la disponibilidad de vuelos y guarda la reserva si el vuelo 
+				está disponible.
+actualizarReserva(Reserva reserva): Guarda los cambios en una reserva existente.
+eliminarReserva(int idReserva): Elimina una reserva por su ID y devuelve la lista actualizada de 
+				reservas.
+buscarPorNombreDelHotel(String nombreHotel): Utiliza RestTemplate para obtener datos del hotel por 
+					     nombre y luego busca las reservas correspondientes 
+					     por idHotel.
